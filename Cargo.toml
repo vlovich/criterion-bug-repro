@@ -1,0 +1,20 @@
+[package]
+name = "ordsearch-benchmark"
+version = "0.1.0"
+edition = "2021"
+
+[[bench]]
+name = "ordsearch"
+harness = false
+
+[dependencies]
+# bloom = "0.3" # supports union, and custom hashers (use xxh3 with appropriate number of secrets).
+ordsearch = { version = "0.2.4" }
+rayon = "1.7"
+
+[dev-dependencies]
+criterion = { version = "0.4" }
+rand = "0.8"
+
+[features]
+html_reports = ["criterion/html_reports"]
